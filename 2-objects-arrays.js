@@ -77,8 +77,9 @@ console.log(questions);
 //     (или индексы, если число встречается более одного раза).
 //     Само максимальное число мы уже нашли в прошлой части задачи, повторно его искать не нужно.
 
-let arrNums = [42, 65, 49, 68, 56, 47, 70, 42, 51, 35, 58, 63, 40, 70]
+let arrNums = [89, 42, 65, 49, 68, 56, 47, 70, 42, 51, 35, 58, 63, 40, 70, 89]
 let sum = 0
+let maxNum = []
 
 for (let i = 0; i < arrNums.length; i++)
 {
@@ -87,7 +88,7 @@ for (let i = 0; i < arrNums.length; i++)
 console.log(sum);
 
 let sumOfEvenNums = 0
-let max = 0
+let max = {}
 
 for (let i = 0; i < arrNums.length; i++)
 {
@@ -98,14 +99,34 @@ for (let i = 0; i < arrNums.length; i++)
 
     if (arrNums[i] > arrNums[i + 1])
     {
-        max = arrNums[i]
+        max.index = i
+        max.value = arrNums[i]
     } else if (arrNums[i] < arrNums[i + 1])
     {
-        max = arrNums[i + 1]
+        max.index = i + 1
+        max.value = arrNums[i + 1]
     }
 }
-console.log(sumOfEvenNums);
-console.log(max);
+
+
+maxNum.push(max)
+arrNums.forEach((value, index) =>
+{
+    if (max.value === value && max.index !== index)
+    {
+        maxNum.push({
+            index,
+            value,
+        })
+    }
+})
+
+// console.log(sumOfEvenNums);
+maxNum.forEach(max =>
+    {
+        console.log(max.index)
+    })
+
 
 
 // Задание 7
@@ -181,10 +202,11 @@ for (let i = 0; i < users.length; i++)
         // console.log(value);
         if (value === 'age' && users[i][value] > 15)
         {
-            console.log(users[i][value]);
+            console.log(users[i].name);
         }
     }                                                                                                                                                                
 }
+
 
 // Задание 10
 // Задать массив слов. Например:
@@ -199,13 +221,19 @@ let vegetables = ["морковь", "баклажан", "репа", "топин�
 //     (результат - 4, т.к. слово text состоит из 4 символов)
 // 2) Пройтись по полученному массиву объектов и вывести в консоль строки вида "слово - длина_слова", например "картошка - 8"
 
-let vegetablesObj = {}
+let vegetablesObj = []
 for (let i = 0; i < vegetables.length; i++)
 {
-    vegetablesObj.word = vegetables[i]
-    vegetablesObj.length = vegetables[i].length
+    // vegetablesObj[i].word = vegetables[i]
+    // vegetablesObj[i].length = vegetables[i].length
+    vegetablesObj[i] = {
+        word: vegetables[i],
+        length: vegetables[i].length,
+    }
     // console.log(vegetablesObj.word, vegetablesObj.length)
 
 }
 
 console.log(vegetablesObj)
+
+
