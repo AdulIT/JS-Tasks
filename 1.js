@@ -136,10 +136,10 @@ const projects = +prompt('Projects number')
 if (score >= 90 || projects > 10)
 {
     console.log(100)
-} else if (score >= 75 && score < 90 && projects >= 5)
+} else if (score >= 75 && projects >= 5)
 {
     console.log(90)
-} else if (score >= 50 && score < 75 && projects >= 2)
+} else if (score >= 50 && projects >= 2)
 {
     console.log(75)
 } else
@@ -165,13 +165,12 @@ let totalRent
 if (autoRentDays >= 7 )
 {
     totalRent = (autoRentDays * oneDayRent) - maxDiscount
-    console.log(totalRent)
 } else if (autoRentDays >= 3 && autoRentDays < 7)
 {
     totalRent = (autoRentDays * oneDayRent) - minDiscount
-    console.log(totalRent)
 } else
 {
     totalRent = autoRentDays * oneDayRent
-    console.log(totalRent)
 }
+
+console.log(totalRent)
