@@ -61,7 +61,7 @@ let result
 if (userNum < 5)
 {
     console.log('0')
-} else if (userNum >= 5)
+} else if (userNum > 5)
 {
     console.log('1')
 }
