@@ -36,15 +36,15 @@ console.log(randomVar)
 // - если меньше нуля - строку “less then zero”;
 // - если больше нуля - используя оператор “присвоение”, переменную умножить на 10 (использовать краткую запись).
 
-let variable = 5
+let variable = -0.6
 
 if (variable === 0)
 {
     variable = 1
-} else if (variable <= 0)
+} else if (variable < 0)
 {
     variable = 'less then zero'
-} else if (variable >= 0)
+} else if (variable > 0)
 {
     variable *= 10
 }
