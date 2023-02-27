@@ -20,7 +20,7 @@ console.log(num ** degree)
 // присвоить ей значение “visible”, иначе - “hidden”.
 
 let randomVar = 'random'
-if (randomVar === 'hiden')
+if (randomVar === 'hidden')
 {
     randomVar = 'visible'
 } else
