@@ -96,6 +96,9 @@ const num4 = +prompt('Input the second num')
 if (num3 % num4 == 0)
 {
     console.log('Yes')
+} else
+{
+    console.log('No')
 }
 
 // // 10
