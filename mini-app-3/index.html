@@ -4,36 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini app 1</title>
+    <title>Mini app 3</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main class="main">
-            <section class="first">
-                <div class="container">
-                    <h1 class="first__title">
-                        Mini App 1
-                    </h1>
-                    <p class="first__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nesciunt quos harum repellendus rem dicta ipsum, in et dolorum adipisci quia cumque distinctio nam nihil reprehenderit deleniti vel vero quae.
-                    </p>
-                    <button class="first__button" id="recall">Recall</button>
+    <header class="header">
+        <div class="container">
+            <div class="flex-container">
+                <div class="hamburger">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#000000" d="M23 18h-22c-.6 0-1 .4-1 1s.4 1 1 1h22c.6 0 1-.4 1-1s-.4-1-1-1zm-22-12h22c.6 0 1-.4 1-1s-.4-1-1-1h-22c-.6 0-1 .4-1 1s.4 1 1 1zm22 5h-22c-.6 0-1 .4-1 1s.4 1 1 1h22c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+                    </svg>
                 </div>
-            </section>
-            
-            <div class="modal">
-                <div class="modal__content">
-                    <button class="modal__close">
-                        &times;
-                    </button>
-                    <h2 class="modal__title">Modal Header</h2>
-                    <p class="modal__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero minus adipisci consectetur? Perspiciatis, officia quaerat?
-                    </p>
+
+                <div class="close">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#000000" d="M13.4 12l7.3-7.3c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0l-7.3 7.3-7.3-7.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l7.3 7.3-7.3 7.3c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l7.3-7.3 7.3 7.3c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4l-7.3-7.3z"/>
+                    </svg>
                 </div>
+    
+                <img src="./icons/dev.by.svg" alt="logo" class="nav__logo">
+                
+                <nav class="nav">
+                    <ul class="menu">
+                        <li class="menu__item"><a href="#" class="menu__link">Support</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">News</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Dzik Gid</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Georgia</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Blogs</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Vacancies</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Companies</a></li>
+                    </ul>
+                </nav>
             </div>
 
-    </main>
+            <div class="hamburger__content">
+                <input id="search" type="search" class="hamburger__input" placeholder="Search">
+                <label for="search" class="hamburger__label">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M21.7 20.3l-3.7-3.7c1.2-1.5 2-3.5 2-5.6 0-5-4-9-9-9s-9 4-9 9 4 9 9 9c2.1 0 4.1-.7 5.6-2l3.7 3.7c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4zm-10.7-2.3c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+                    </svg>
+                </label>
+
+                <nav class="nav-hamburger">
+                    <ul class="menu-hamburger">
+                        <li class="menu__item"><a href="#" class="menu__link">Support</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">News</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Dzik Gid</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Georgia</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Blogs</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Vacancies</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Companies</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
     <script src="js/script.js"></script>
 </body>
 </html>

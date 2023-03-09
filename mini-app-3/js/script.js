@@ -1,32 +1,17 @@
-const modal = document.querySelector('.modal'),
-      recallBtn = document.querySelector('#recall'),
-      modalCloseBtn = modal.querySelector('.modal__close')
+const hamburger = document.querySelector('.hamburger'),
+      hamburgerContent = document.querySelector('.hamburger__content'),
+      closeBtn = document.querySelector('.close')
 
-recallBtn.addEventListener('click', openModal)
-
-modalCloseBtn.addEventListener('click', closeModal)
-
-window.addEventListener('click', (e) =>
+hamburger.addEventListener('click', () =>
 {
-    if (e.target === modal)
-    {
-        closeModal()
-    }
-})
-window.addEventListener('keydown', (e) =>
-{
-    if (e.code === 'Escape')
-    {
-        closeModal()
-    }
+    closeBtn.style.display = 'block'
+    hamburger.style.display = 'none'
+    hamburgerContent.style.display = 'block'
 })
 
-function openModal()
+closeBtn.addEventListener('click', () =>
 {
-    modal.classList.add('open')
-}
-
-function closeModal()
-{
-    modal.classList.remove('open')
-}
+    closeBtn.style.display = 'none'
+    hamburgerContent.style.display = 'none'
+    hamburger.style.display = 'block'
+})
