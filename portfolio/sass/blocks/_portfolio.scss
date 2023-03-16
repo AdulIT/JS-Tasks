@@ -6,6 +6,7 @@
         width: 895px;
         margin: 60px auto;
         display: flex;
+        flex-wrap: wrap;
         gap: 5px;
     }
     .tabs-item
@@ -26,8 +27,8 @@
     &__projects
     {
         display: grid;
-        grid-template-columns: repeat(3, 450px);
-        grid-template-rows: repeat(2, 560px);
+        grid-template-columns: repeat(3, minmax(auto, 450px));
+        grid-template-rows: repeat(2, minmax(auto, 560px));
         grid-auto-rows: 560px;
         gap: 25px;
     }

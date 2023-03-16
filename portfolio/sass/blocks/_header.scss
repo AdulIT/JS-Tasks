@@ -1,8 +1,5 @@
 .header
 {
-    position: absolute;
-    top: 0;
-    left: 20px;
     padding: 20px 0;
     height: 90px;
     &__logo
@@ -41,6 +38,14 @@
                     color: $base_color;
                 }
             }
+        }
+        .hamburger
+        {
+            display: none;
+        }
+        .close
+        {
+            display: none;
         }
     }
 }
