@@ -142,7 +142,7 @@ let newArr = []
 
 for (let i = 0; i < someArr.length; i++)
 {
-    if (someArr[i] >= 0)
+    if (someArr[i] > 0)
     {
         newArr.push(someArr[i])
     }
