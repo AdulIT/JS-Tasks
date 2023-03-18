@@ -15,7 +15,7 @@ ucFirst('some')
 
 function checkSpam(str)
 {
-    if (str.toLowerCase() === 'badWord'.toLowerCase() || str.toLowerCase() === 'XXX'.toLowerCase())
+    if (str.toLowerCase().includes('badWord'.toLowerCase()) || str.toLowerCase().includes('XXX'.toLowerCase()))
     {
         console.log(true)
     } else
@@ -24,6 +24,7 @@ function checkSpam(str)
     }
 }
 checkSpam('xxx')
+checkSpam('badWord hello xxx')
 
 // Задание 3
 // Написать функцию, которой на вход подается строка, на выход она дает символы наоборот (разворачивает строку).
