@@ -222,6 +222,16 @@ svg path:hover {
   grid-auto-rows: 560px;
   gap: 25px;
 }
+.portfolio__project img {
+  max-width: 450px;
+  max-height: 560px;
+}
+.portfolio .hide {
+  display: none;
+}
+.portfolio .show {
+  display: grid;
+}
 
 .video {
   padding-top: 100px;

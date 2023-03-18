@@ -32,4 +32,21 @@
         grid-auto-rows: 560px;
         gap: 25px;
     }
+    &__project
+    {
+        img
+        {
+            max-width: 450px;
+            max-height: 560px;
+        }
+    }
+    .hide
+    {
+        display: none;
+    }
+
+    .show
+    {
+        display: grid;
+    }
 }
