@@ -57,7 +57,7 @@ square()
 const guessNumber = (n) =>
 {
     let random = getRandomInteger(0, 10)
-    if (n >= 0 ** n <= 10)
+    if (n >= 0 && n <= 10)
     {
         if (n === random)
         {
