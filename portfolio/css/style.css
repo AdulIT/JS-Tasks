@@ -274,9 +274,82 @@ svg path:hover {
   color: #fff;
 }
 
-.img {
+.contacts {
+  padding: 60px 0 195px;
   min-height: 700px;
-  background: url("../../img/contacts-bg.jpg");
+  background: url("../../img/contacts-bg.jpg") center center/cover no-repeat;
+}
+.contacts .flex-container {
+  width: 100%;
+  justify-content: end;
+}
+.contacts__form {
+  width: 450px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* WebKit, Edge */
+  /* Firefox 4-18 */
+  /* Firefox 19+ */
+  /* IE 10-11 */
+  /* Edge */
+  /* MODERN BROWSER */
+}
+.contacts__form-title {
+  align-self: start;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 80px;
+  color: #BDAE82;
+  margin-bottom: 40px;
+}
+.contacts__form-input {
+  padding: 5px 0 5px 20px;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: 2px solid #BDAE82;
+  background-color: transparent;
+  color: #BDAE82;
+}
+.contacts__form-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 5px 20px;
+  outline: none;
+  border: 2px solid #BDAE82;
+  background-color: transparent;
+  color: #BDAE82;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #BDAE82;
+}
+.contacts__form-btn {
+  margin-top: 30px;
+  align-self: start;
+}
+.contacts__form ::-moz-placeholder {
+  color: #BDAE82;
+  opacity: 1;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #BDAE82;
+}
+.contacts__form ::placeholder {
+  color: #BDAE82;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #BDAE82;
 }
 
 .footer {
@@ -338,7 +411,7 @@ svg path:hover {
     gap: 16px;
     align-items: start;
     justify-content: start;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     flex-direction: column;
@@ -358,7 +431,7 @@ svg path:hover {
     margin-left: 20px;
   }
   .header .nav .close {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 64px;
     display: none;
@@ -397,13 +470,72 @@ svg path:hover {
     width: 445px;
     gap: 5px;
   }
-  .btn {
-    margin-top: 0;
-  }
   .portfolio__projects {
     grid-template-columns: minmax(auto, 450px);
   }
+  .video .container {
+    width: 100%;
+  }
+  .btn {
+    margin-top: 0;
+  }
   .price__card {
     margin: 0 auto;
+  }
+  .contacts .flex-container {
+    justify-content: center;
+  }
+  .contacts__form-title, .contacts__form-btn {
+    align-self: center;
+  }
+  .contacts__form-input, .contacts__form-textarea {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .footer {
+    padding: 28px 0;
+  }
+  .footer .flex-container {
+    margin: 0 auto;
+    width: 210px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container {
+    width: 540px;
+  }
+  .about {
+    background: url("../img/bg-sm.png") center center/cover no-repeat;
+  }
+  .contacts {
+    background: url("../img/contacts-sm-bg.png") center center/cover no-repeat;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    width: 300px;
+  }
+  .btn {
+    width: 146px;
+    font-size: 18px;
+  }
+  .about__title {
+    font-size: 30px;
+    line-height: 60px;
+  }
+  .about__descr {
+    width: auto;
+  }
+  .portfolio__project_img {
+    width: 100%;
+  }
+  .title-section span {
+    width: 50px;
+  }
+  .price__card {
+    height: 470px;
+    padding: 20px 0 41px;
+  }
+  .price__card-list__item {
+    line-height: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
