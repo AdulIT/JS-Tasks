@@ -3,18 +3,19 @@ const hamburger = document.querySelector('.hamburger'),
       closeBtn = document.querySelector('.close'),
       menu =  document.querySelector('.menu')
 
-
 hamburger.addEventListener('click', () =>
 {
-    menu.style.display = 'block'
-    closeBtn.style.display = 'block'
+    menu.classList.add('menu-active')
+    closeBtn.classList.add('close-active')
 })
 
 closeBtn.addEventListener('click', () =>
 {
-    menu.style.display = 'none'
-    closeBtn.style.display = 'none'
+    menu.classList.remove('menu-active')
+    closeBtn.classList.remove('close-active')
 })
+
+
 
 // Tabs
 const tabsParent = document.querySelector('.tabs-container'),
@@ -232,10 +233,10 @@ fullscreenBtn.addEventListener('click', () =>
     if (document.fullscreenElement)
     {
         fullscreenBtn.classList.replace('fa-compress', 'fa-expand')
-        return document.exitFullscreen
+        return document.exitFullscreen()
     }
     fullscreenBtn.classList.replace('fa-expand', 'fa-compress')
-    container.requestFullscreen
+    container.requestFullscreen()
 })
 
 skipBackward.addEventListener('click', () =>
