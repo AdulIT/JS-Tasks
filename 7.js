@@ -50,6 +50,7 @@ const form = document.querySelector('form'),
 
 form.addEventListener('submit', (e) =>
 {
+    e.preventDefault()
     const li = document.createElement('li')
     li.innerText = thirdInput.value
     thirdUl.appendChild(li)
@@ -94,8 +95,9 @@ const calcForm = document.querySelector('.calc'),
 //     calcResult.innerText = parseInt(result)
 // })
 
-calcForm.addEventListener('submit', () =>
+calcForm.addEventListener('submit', (e) =>
 {
+    e.preventDefault()
     calcResult.innerText = eval(`${calcInput1.value} ${calcSelect.value} ${calcInput2.value}`)
 })
 
