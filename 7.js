@@ -9,7 +9,7 @@ const firstUl = document.querySelector('.first-ul')
 firstInput.addEventListener('keydown', (event) =>
 {
     const li = document.createElement('li')
-    li.innerText = event.target.value
+    li.innerText = event.key
     console.log(event)
 
     firstUl.appendChild(li)
