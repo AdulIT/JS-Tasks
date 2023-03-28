@@ -194,7 +194,7 @@ svg path:hover {
 }
 
 .portfolio {
-  padding-top: 100px;
+  padding: 100px 0;
 }
 .portfolio .tabs-container {
   width: 895px;
@@ -222,9 +222,15 @@ svg path:hover {
   grid-auto-rows: 560px;
   gap: 25px;
 }
-.portfolio__project img {
+.portfolio__project {
   max-width: 450px;
   max-height: 560px;
+}
+.portfolio__project img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .portfolio .hide {
   display: none;

@@ -174,7 +174,7 @@ container.addEventListener('mouseup', () =>
 
 window.addEventListener('keydown', (e) =>
 {
-    e.preventDefault()
+    // e.preventDefault()
     if (e.code === 'Space')
     {
         if (mainVideo.paused)
@@ -198,7 +198,7 @@ window.addEventListener('keydown', (e) =>
 
 document.addEventListener('click', (e) =>
 {
-    e.preventDefault()
+    // e.preventDefault()
     if (e.target.className === 'video-project' && mainVideo.paused)
     {
         mainVideo.play()
