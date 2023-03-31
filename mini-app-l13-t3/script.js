@@ -1,10 +1,10 @@
 class Logo {
     constructor(url) {
-      this.top = 0;
-      this.left = 0;
-      this.width = 200;
-      this.imgUrl = url;
-      this.html = null;
+      this.top = 0
+      this.left = 0
+      this.width = 200
+      this.imgUrl = url
+      this.html = null
     }
   
     init() {
@@ -21,7 +21,7 @@ class Logo {
       this.render()
     }
     
-    render(top = 0, left = 0) {
+    render(top = 0, left = 0, width) {
       // метод должен отрисовать изображение (this.html) на странице
       // применить фиксированное позиционирование
       // использовать this.top и this.left для указания позиции
@@ -31,11 +31,11 @@ class Logo {
 
       this.top = 0 + top
       this.left = 0 + left
-      this.width = 500 + 'px'
+    //   this.width = 500
 
       this.html.style.top = this.top
       this.html.style.left = this.left
-      this.html.style.width = this.width
+      this.html.style.width = this.width + 'px'
     }
   
     moveUp() {
@@ -78,23 +78,55 @@ class Logo {
       this.render(this.top, this.left)
       this.html.style.left = this.left + 'px'
     }
-  }
+}
   
-//   const imgUrl = 'https://bit.ly/2tcDito';
-  const imgUrl = 'https://images.unsplash.com/photo-1680208281019-8642d20405f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80';
-  let mfLogotip = new Logo(imgUrl);
-  console.log(mfLogotip);
-  
-  // запускаем наше микро-приложение
-  mfLogotip.init();
-  
-  mfLogotip.moveUp();
-  mfLogotip.moveRight();
-  mfLogotip.moveRight();
-  mfLogotip.moveRight();
-  mfLogotip.moveRight();
-  mfLogotip.moveDown();
-  mfLogotip.moveDown();
-  mfLogotip.moveDown();
-  mfLogotip.moveDown();
+//   const imgUrl = 'https://bit.ly/2tcDito'
+const imgUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png'
+let mfLogotip = new Logo(imgUrl)
+console.log(mfLogotip)
+
+// запускаем наше микро-приложение
+mfLogotip.init()
+
+// mfLogotip.moveUp()
+// mfLogotip.moveRight()
+// mfLogotip.moveRight()
+// mfLogotip.moveRight()
+// mfLogotip.moveRight()
+mfLogotip.moveDown()
+mfLogotip.moveDown()
+mfLogotip.moveDown()
+// mfLogotip.moveDown()
+// console.log(mfLogotip.left)
+
   // something else, чтобы всё работало
+
+class Circle extends Logo
+{
+    constructor(size, color, top, left, width)
+    {
+        super(top, left, width)
+        this.size = size
+        this.color = color
+        this.border = 50 + 'px'
+        this.html = null
+        this.width = size.width
+    }
+
+    render()
+    {
+        const circle = document.createElement('div')
+        let [width, height] = this.size
+        this.html = circle
+        this.html.style.width = width + 'px'
+        this.html.style.height = height + 'px'
+        this.html.style.backgroundColor = this.color
+        this.html.style.borderRadius = this.border
+        document.body.append(this.html)
+        super.render(this.top, this.left)
+    }
+}
+
+const circle = new Circle([50, 50], 'yellow')
+circle.render()
+console.log(circle)
