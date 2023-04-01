@@ -53,10 +53,12 @@ const obj =
     age: 19,
     devilFruit: 'Hito Hito no mi model Nika'
 }
-for (let key in obj)
+
+if (!obj.hasOwnProperty('name') && !obj.hasOwnProperty('age'))
 {
-    // console.log(key);
-    console.log(obj[key]);
+    obj.name = 1
+    obj.age = 2
 }
 const {name, age, ...fields} = obj
 console.log(name, age, fields)
+console.log(obj)
