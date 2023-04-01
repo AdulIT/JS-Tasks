@@ -16,95 +16,51 @@ const form = document.querySelector('.add'),
       addBtn = form.querySelector('.add__btn'),
       tasks = document.querySelector('.tasks')
 
-
+let counter = 0
 addBtn.addEventListener('click', (e) =>
 {
+    counter++
     e.preventDefault()
     let li = document.createElement('li')
 
-    li.innerHTML = `
-        <input type="checkbox" name="checkbox" class="checkbox">
-        ${input.value}
-        <button class="delete__btn">&times;</button>
-    `
-    
-    const inputText = input.value
-    const inputInfo = []
-    // localStorage.setItem('key', inputText)
-    
-    tasks.append(li)
-    input.value = ''
+    createLi(input.value, li)
 
-    li.forEach((item) =>
-    {
-        inputInfo.push(item)
-    })
-    console.log(inputInfo)
-    // createLi(input.value)
-    lineThrough(li)
-    removeTask(li)
+
+    li.children[0].addEventListener('change', lineThrough)
+    li.children[1].addEventListener('click', removeTask)
+
+    localStorage.setItem(counter, input.value)
+    input.value = ''
 })
 
-function createLi(value)
+function createLi(value, li)
 {
+    // let li = document.createElement('li')
     li.innerHTML = `
         <input type="checkbox" name="checkbox" class="checkbox">
         ${value}
         <button class="delete__btn">&times;</button>
     `
-    
-    const inputText = input.value
-    for (let i = 0; i < li.length; i++)
-    {
-        localStorage.setItem(i, inputText)
-    }
 
     tasks.append(li)
-    input.value = ''
-    // saveToLocalStorage(li)
 }
 
-function lineThrough(li)
+function lineThrough(li, event)
 {
-    li.children[0].addEventListener('change', (event) =>
+    if (event.target.checked)
     {
-        if (event.target.checked)
-        {
-            tasks.insertBefore(li, tasks.children[tasks.children.length + 1])
-            // li.remove()
-            // tasks.append(li)
-            li.style.textDecoration = 'line-through'
-        } else
-        {
-            tasks.insertBefore(li, tasks.children[0])
-            li.style.textDecoration = 'none'
-        }
-    })
+        tasks.insertBefore(li, tasks.children[tasks.children.length + 1])
+        // li.remove()
+        // tasks.append(li)
+        li.style.textDecoration = 'line-through'
+    } else
+    {
+        tasks.insertBefore(li, tasks.children[0])
+        li.style.textDecoration = 'none'
+    }
 }
 
 function removeTask(li)
 {
-    li.children[1].addEventListener('click', () =>
-    {
-        li.remove()
-    })
+    li.remove()
 }
-
-function saveToLocalStorage(elems)
-{
-    const task = []
-    elems.forEach((elem, i) =>
-        {
-            task[i] = elem
-        })
-    localStorage.li = JSON.stringify(task)
-    console.log(localStorage.li);
-}
-
-// const task = []
-// li.forEach((elem, i) =>
-//     {
-//         task[i] = elem
-//     })
-// localStorage.li = JSON.stringify(task)
-// console.log(localStorage.li);
