@@ -1,0 +1,32 @@
+.card
+{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.list-group-item
+{
+    cursor: pointer;
+}
+
+.btn
+{
+    text-align: left;
+}
+
+.hide
+{
+    display: none;
+}
+
+.show
+{
+    display: block;
+}
+
+.list-group-active
+{
+    background-color: rgb(63, 72, 200);
+    color: #fff;
+}
