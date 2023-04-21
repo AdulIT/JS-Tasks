@@ -15,70 +15,76 @@ const namesInfo = document.querySelector('.card-info')
 
 async function fetchUsers(url)
 {
-    const response = await fetch(url)
-    const users = await response.json()
-    // console.log(users[0])
-
-    for (let i = 0; i < users.length; i++)
+    try
     {
-        ul.innerHTML += `
-            <li class="list-group-item">${users[i].name}</li>
-        `
+        const response = await fetch(url)
+        const users = await response.json()
+        // console.log(users[0])
 
-        namesInfo.innerHTML +=
-        `
-            <div class="card-body">
-                <h5 class="card-title">${users[i].name}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${users[i].username}</h6>
-                <p class="card-text">Street: ${users[i].address.street}, Suite: ${users[i].address.suite}, City: ${users[i].address.city}, Zipcode: ${users[i].address.zipcode}</p>
-                <a href="mailto:${users[i].email}" class="card-link">Написать ему</a>
-            </div>
-        `
-    }
-
-    const listOfNames = document.querySelectorAll('.list-group-item')
-    const namesInfoBody = document.querySelectorAll('.card-body')
-
-    function hideUserContents()
-    {
-        namesInfoBody.forEach(username =>
-            {
-                username.classList.add('hide')
-                username.classList.remove('show')
-            })
-
-        listOfNames.forEach(name =>
-            {
-                name.classList.remove('list-group-active')
-            })
-    }
-
-    function showUserContent(i = 0)
-    {
-        namesInfoBody[i].classList.add('show')
-        namesInfoBody[i].classList.remove('hide')
-        listOfNames[i].classList.add('list-group-active')
-    }
-
-    hideUserContents()
-    showUserContent()
-
-    ul.addEventListener('click', (event) =>
-    {
-        const target = event.target
-
-        if (target && target.classList.contains('list-group-item'))
+        for (let i = 0; i < users.length; i++)
         {
-            listOfNames.forEach((item, i) =>
+            ul.innerHTML += `
+                <li class="list-group-item">${users[i].name}</li>
+            `
+
+            namesInfo.innerHTML +=
+            `
+                <div class="card-body">
+                    <h5 class="card-title">${users[i].name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${users[i].username}</h6>
+                    <p class="card-text">Street: ${users[i].address.street}, Suite: ${users[i].address.suite}, City: ${users[i].address.city}, Zipcode: ${users[i].address.zipcode}</p>
+                    <a href="mailto:${users[i].email}" class="card-link">Написать ему</a>
+                </div>
+            `
+        }
+
+        const listOfNames = document.querySelectorAll('.list-group-item')
+        const namesInfoBody = document.querySelectorAll('.card-body')
+
+        function hideUserContents()
+        {
+            namesInfoBody.forEach(username =>
                 {
-                    if (target == item)
-                    {
-                        hideUserContents()
-                        showUserContent(i)
-                    }
+                    username.classList.add('hide')
+                    username.classList.remove('show')
+                })
+
+            listOfNames.forEach(name =>
+                {
+                    name.classList.remove('list-group-active')
                 })
         }
-    })
+
+        function showUserContent(i = 0)
+        {
+            namesInfoBody[i].classList.add('show')
+            namesInfoBody[i].classList.remove('hide')
+            listOfNames[i].classList.add('list-group-active')
+        }
+
+        hideUserContents()
+        showUserContent()
+
+        ul.addEventListener('click', (event) =>
+        {
+            const target = event.target
+
+            if (target && target.classList.contains('list-group-item'))
+            {
+                listOfNames.forEach((item, i) =>
+                    {
+                        if (target == item)
+                        {
+                            hideUserContents()
+                            showUserContent(i)
+                        }
+                    })
+            }
+        })    
+    } catch (error)
+    {
+        console.error('Error while getting data')
+    }
 }
 
 const url = 'https://jsonplaceholder.typicode.com/users'
