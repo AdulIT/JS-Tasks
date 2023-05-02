@@ -1,0 +1,32 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.btn
+{
+    border: none;
+    outline: none;
+    padding: 15px;
+    cursor: pointer;
+    margin: 20px 30px;
+    background-color: #436ab6;
+    color: #fff;
+}
+
+.emoji-daily
+{
+    font-size: 70px;
+    margin-left: 30px;
+}
+
+.all-emoji
+{
+    margin-left: 30px;
+}
+.all-emoji h2
+{
+    margin-bottom: 15px;
+}
